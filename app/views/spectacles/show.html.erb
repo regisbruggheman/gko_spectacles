@@ -1,0 +1,18 @@
+<%# resource_cache(resource) do %>
+	<article class="spectacle">
+		<div class="background-image-holder">
+    		<% if image = resource.images.first.thumbnail(site.preferred_features_image_size) %>
+		</div>
+		<%= page_title(resource.title) %>
+		<%= render_html_text(resource.body) %>
+		<% if parent.display_events_in_spectacle && resource.spectacle_events.upcoming.try(:any?) %>
+		  <h3><%= t(:"spectacles.upcoming_dates") %></h3>
+			<%= grid_tag do %>
+		  		<%= render resource.spectacle_events.upcoming %>
+		<% end %>
+		<% end %>
+		<%= render_resource_categories %>
+		<%= render_resource_stickers %>
+		<%= render_next_previous %>
+	</article>
+<%# end %>

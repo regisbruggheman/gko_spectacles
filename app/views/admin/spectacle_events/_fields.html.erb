@@ -1,0 +1,35 @@
+<%= f.hidden_field :section_id %>
+<div class='control-group'>
+  <%= f.label :category_id, "Catégorie", :class => "control-label" %>
+  <div class="controls">
+    <%= f.collection_select :category_id, current_site.spectacle_event_categories.all,
+        :id, :title, {:prompt => 'Sélectionner une catégorie'} %>
+  </div>
+</div>
+<div class='control-group'>
+  <%= f.label :spectacle_id, "Spectacle", :class => "control-label" %>
+  <div class="controls">
+    <%= f.collection_select :spectacle_id, current_site.spectacles.all, :id, :title, {:prompt => 'Sélectionner un spectacle'} %>
+  </div>
+</div>
+<%= f.input :custom_date %>
+<%= f.input :start_date, :required => true, :wrapper => :append do %>
+    <%= f.text_field :start_date, :class => 'date_picker',
+      :value => f.object.start_date.present? ? l(f.object.start_date, {:format => '%A %d %B %Y'}) : nil %>
+    <%= content_tag :span, :class => "add-on" do %>
+      <%= raw("<i class='icon-calendar'></i>") %>
+    <% end %>
+<% end %>
+<%= f.input :end_date, :required => true, :wrapper => :append do %>
+    <%= f.text_field :end_date, :class => 'date_picker',
+      :value => f.object.end_date.present? ? l(f.object.end_date, {:format => '%A %d %B %Y'}) : nil %>
+    <%= content_tag :span, :class => "add-on" do %>
+      <%= raw("<i class='icon-calendar'></i>") %>
+    <% end %>
+<% end %>
+<%= f.input :custom_title %>
+<%= f.input :description %>
+<%= f.input :location %>
+<%= f.input :place %>
+<%= f.input :more_info_url %>
+<%= f.input :registration_url %>

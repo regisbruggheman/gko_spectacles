@@ -1,0 +1,10 @@
+<%# cache(["admin4", @resource_locale.to_s, record]) do %>
+  <% title = record.spectacle ? record.spectacle.title : record.custom_title %>
+	<tr>
+	  <td><%= glink_to(title, url_for([:edit, :admin, current_site, record.section, record])) %></td>
+	  <td><%= l(record.start_date.to_date, :format => :long) if record.start_date.present? %></td>
+	  <td><%= l(record.end_date.to_date, :format => :long) if record.end_date.present? %></td>
+	  <td><%= record.location %></td>
+	  <td><%= icons_to_actions([:destroy, :edit], record) %></td>
+	</tr>
+<%# end %>

@@ -1,0 +1,121 @@
+fr:
+  activerecord:
+    models:
+      spectacle_list: Liste de spectacles
+      spectacle: Spectacle
+    attributes:
+      spectacle_option:
+        subtitle: Définition
+        team: Distribution
+        prod: Production
+        intro: Accroche
+        co_prod: Co-Production
+        extra: Mentions
+        sponsor: Sponsors
+
+  confirmations:
+    destroy:
+      spectacle_list: "Voulez-vous réellement supprimer définitivement cette page ? <br/>Cette action est irréversible et supprimera également tous les spectacles de la liste!"
+      spectacle: "Voulez-vous réellement supprimer définitivement ce spectacle de la liste ?<br/>Cette action est irréversible!"
+      spectacle_event_list: "Voulez-vous réellement supprimer définitivement cette page ? <br/>Cette action est irréversible et supprimera également tous les évènements de la liste!"
+      spectacle_event: "Voulez-vous réellement supprimer définitivement cet évènement de la liste ?<br/>Cette action est irréversible!"
+
+  spectacles:
+    collection:
+      continue: Voir le spectacle
+      empty: Aucun spectacle n'a été trouvé.
+    links:
+      previous: Précédent
+      next: Suivant
+    see_all_dates: Voir toutes les dates
+    upcoming_dates: "Prochaines représentations"
+
+  simple_form:
+    labels:
+      spectacle_event:
+        custom_title: Titre optionnel
+      spectacle_option:
+        subtitle: 'Sous-titre'
+        team: Equipe
+        prod: Production
+        intro: Introduction
+        co_prod: Co-Production
+        extra: extra
+        sponsor: Sponsors
+
+  admin:
+    spectacle_events:
+      actions:
+        edit: Modifier
+        new: Nouvel évènement
+        index: Liste des évènements
+      titles:
+        edit: Modification
+        new: Nouvel évènement
+        index: Liste des évènements
+
+    spectacle_event_lists:
+      actions:
+        edit: Accueil des évènements
+        new: Ajouter
+        destroy: Supprimer cette page
+        index: Liste
+      tooltips:
+        edit: Modifier la page du listing des évènements
+      titles:
+        edit: Modification de la page du listing des évènements
+
+    spectacle_lists:
+      actions:
+        edit: Accueil des spectacles
+        new: New
+        destroy: Destroy
+        index: Index
+      tooltips:
+        edit: Modifier la page du listing des spectacles
+      titles:
+        edit: Modification de la page du listing des spectacles
+
+    spectacles:
+      untranslated_message:
+        one: "Attention: 1 spectacle n'est pas traduite."
+        many: "Attention: %{count} spectacles ne sont pas traduits."
+      select_blank: Sélectionner un spectacle
+      menu_tab: Spectacles
+      collection:
+        empty: "Aucun spectacle n'a été trouvé. %{link}"
+        create_item: "Créer un nouveau spectacle maintenant."
+      actions:
+        new: Ajouter un spectacle
+        destroy: Supprimer ce spectacle
+        edit: Modifier ce spectacle
+        index: Liste
+        view: Voir la page publique de ce spectacle
+        previous: Suivant
+        next: Précédent
+      tooltips:
+        index: Lister les spectacles
+      titles:
+        new: Ajout d'un spectacle
+        index: Liste des spectacles
+        edit: Modification d'un spectacle
+
+    trainings:
+      select_blank: Sélectionner une formation
+      collection:
+        empty: "Aucune formation n'a été trouvée."
+        create_item: "Créer une formation."
+      actions:
+        new: Ajouter une formation
+        destroy: Supprimer cette formation
+        edit: Modifier cette formation
+        index: Liste des formations
+        view: Voir la page publique de ce évènement
+        previous: Suivant
+        next: Précédent
+      tooltips:
+        index: Lister les formations
+      titles:
+        new: Ajout d'une formation
+        index: Liste des formations
+        edit: Modification d'une formation

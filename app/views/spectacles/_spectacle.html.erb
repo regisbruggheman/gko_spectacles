@@ -1,0 +1,10 @@
+<% collection_row_cache(spectacle) do %>
+	<%= grid_item_tag_for(spectacle) do %>
+		<%= render_record_thumb(spectacle) %>
+		<%= grid_item_caption_tag do %>
+			<%= render_record_title(spectacle) %>
+			<%= render_record_description(spectacle) %>
+			<%= render_record_link(spectacle) %>
+		<% end %>
+	<% end %>
+<% end if spectacle %>

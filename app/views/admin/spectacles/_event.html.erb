@@ -1,0 +1,14 @@
+<tbody id="<%= dom_id(season) %>">
+  <tr>
+    <td class='title'><%= event.title %></td>
+    <td class='start_date'><%= format_date(event.start_date) %></td>
+    <td class='end_date'><%= format_date(event.end_date) %></td>
+    <td class="actions">
+      <%= icon_to(gurl_for([:edit, :admin, current_site, @rental_property, event]), 'pencil', :remote => true) %>
+      <%= icon_to(url_for([:admin, current_site, @rental_property, event]), 'trash icon-white',
+                  :remote => true,
+                  :method => :delete,
+                  :confirm => t("confirmations.destroy.rental_property_season")) %>
+    </td>
+  </tr>
+</tbody>

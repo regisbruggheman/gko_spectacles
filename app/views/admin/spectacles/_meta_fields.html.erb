@@ -1,0 +1,182 @@
+<%= render 'form_wymeditor_field', :f => f, :field_name => :subtitle %>
+<%= render 'form_wymeditor_field', :f => f, :field_name => :intro %>
+<%= render 'form_wymeditor_field', :f => f, :field_name => :team %>
+<%= render 'form_wymeditor_field', :f => f, :field_name => :prod %>
+<%= render 'form_wymeditor_field', :f => f, :field_name => :co_prod %>
+<%= render 'form_wymeditor_field', :f => f, :field_name => :sponsor %>
+<%= render 'form_wymeditor_field', :f => f, :field_name => :extra %>
+<%= f.input :video_url, :label => "Lien vidéo (public)" %>
+<div class='control-group'>
+    <label class="string control-label"><%= "Vidéo (pro)".html_safe %></label>
+    <div class='controls'>
+      <% if f.object.video_hd.present? %>
+      <div class="clearfix">
+        <label class="string control-label">
+          <%= f.check_box :remove_video_hd if f.object.video_hd.present? %>
+          <%= "Supprimer la vidéo".html_safe %>
+        </label>
+      </div>
+      <% end %>
+      <div class="clearfix">
+        <%= f.file_field :video_hd, :class => 'file' %>
+      </div>
+    </div>
+</div>
+<div class='control-group'>
+    <label class="string control-label"><%= "Images (pro)".html_safe %></label>
+    <div class='controls'>
+      <% if f.object.images_hd.present? %>
+      <div class="clearfix">
+        <label class="string control-label">
+          <%= f.check_box :remove_images_hd %> <%= "Supprimer les images".html_safe %>
+        </label>
+      </div>
+      <% end %>
+      <div class="clearfix">
+        <%= f.file_field :images_hd, :class => 'file' %>
+      </div>
+    </div>
+</div>
+
+<% if translating? %>
+<div class='control-group'>
+    <label class="string control-label"><%= "Fiche technique (pro)".html_safe %></label>
+    <div class='controls upload_file_preview'>
+      <% if f.object.file_tech_en.present? %>
+          <p class='js-file-preview'><%= link_to "Preview", f.object.file_tech_en.url, :target => "_blank"  %></p>
+      <% end %>
+      <% if f.object.file_tech_en.present? %>
+      <div class="clearfix">
+        <label class="string control-label">
+          <%= f.check_box :remove_file_tech_en %> <%= "Supprimer le fichier".html_safe %>
+        </label>
+      </div>
+      <% end %>
+      <div class='file-field' style="display:<%= f.object.file_tech_en.present? ? 'none' : 'block' %>">
+        <%= f.file_field :file_tech_en, :class => 'file' %>
+      </div>
+      <br class='clearfix'\>
+      <%= btn_to(t(:"admin.documents.replace_file"), "",
+                 :class => "small change-upload-file-btn",
+                 :inline => true,
+                 :data => {:toggle => "toggle", :text => t(:'admin.documents.cancel_replace_file')}) if f.object.file_tech_en.present? %>
+    </div>
+</div>
+<div class='control-group'>
+    <label class="string control-label"><%= "Dossier de présentation (pro & public)".html_safe %></label>
+    <div class='controls upload_file_preview'>
+      <% if f.object.file_doc_en.present? %>
+          <p class='js-file-preview'><%= link_to "Preview", f.object.file_doc_en.url, :target => "_blank"  %></p>
+      <% end %>
+      <% if f.object.file_doc_en.present? %>
+      <div class="clearfix">
+        <label class="string control-label">
+          <%= f.check_box :remove_file_doc_en %> <%= "Supprimer le fichier".html_safe %>
+        </label>
+      </div>
+      <% end %>
+      <div class='file-field' style="display:<%= f.object.file_doc_en.present? ? 'none' : 'block' %>">
+        <%= f.file_field :file_doc_en, :class => 'file' %>
+      </div>
+      <br class='clearfix'\>
+      <%= btn_to(t(:"admin.documents.replace_file"), "",
+                 :class => "small change-upload-file-btn",
+                 :inline => true,
+                 :data => {:toggle => "toggle", :text => t(:'admin.documents.cancel_replace_file')}) if f.object.file_doc_en.present? %>
+    </div>
+</div>
+
+<div class='control-group'>
+    <label class="string control-label"><%= "Dossier de presse (pro & public)".html_safe %></label>
+    <div class='controls upload_file_preview'>
+      <% if f.object.file_press_en.present? %>
+          <p class='js-file-preview'><%= link_to "Preview", f.object.file_press_en.url, :target => "_blank"  %></p>
+      <% end %>
+      <% if f.object.file_press_en.present? %>
+      <div class="clearfix">
+        <label class="string control-label">
+          <%= f.check_box :remove_file_press_en %> <%= "Supprimer le fichier".html_safe %>
+        </label>
+      </div>
+      <% end %>
+      <div class='file-field' style="display:<%= f.object.file_press_en.present? ? 'none' : 'block' %>">
+        <%= f.file_field :file_press_en, :class => 'file' %>
+      </div>
+      <br class='clearfix'\>
+      <%= btn_to(t(:"admin.documents.replace_file"), "",
+                 :class => "small change-upload-file-btn",
+                 :inline => true,
+                 :data => {:toggle => "toggle", :text => t(:'admin.documents.cancel_replace_file')}) if f.object.file_press_en.present? %>
+    </div>
+</div>
+<% else %>
+<div class='control-group'>
+    <label class="string control-label"><%= "Fiche technique (pro)".html_safe %></label>
+    <div class='controls upload_file_preview'>
+      <% if f.object.file_tech.present? %>
+          <p class='js-file-preview'><%= link_to "Preview", f.object.file_tech.url, :target => "_blank"  %></p>
+      <% end %>
+      <% if f.object.file_tech.present? %>
+      <div class="clearfix">
+        <label class="string control-label">
+          <%= f.check_box :remove_file_tech %> <%= "Supprimer le fichier".html_safe %>
+        </label>
+      </div>
+      <% end %>
+      <div class='file-field' style="display:<%= f.object.file_tech.present? ? 'none' : 'block' %>">
+        <%= f.file_field :file_tech, :class => 'file' %>
+      </div>
+      <br class='clearfix'\>
+      <%= btn_to(t(:"admin.documents.replace_file"), "",
+                 :class => "small change-upload-file-btn",
+                 :inline => true,
+                 :data => {:toggle => "toggle", :text => t(:'admin.documents.cancel_replace_file')}) if f.object.file_tech.present? %>
+    </div>
+</div>
+<div class='control-group'>
+    <label class="string control-label"><%= "Dossier de présentation (pro & public)".html_safe %></label>
+    <div class='controls upload_file_preview'>
+      <% if f.object.file_doc_en.present? %>
+          <p class='js-file-preview'><%= link_to "Preview", f.object.file_doc_en.url, :target => "_blank"  %></p>
+      <% end %>
+      <% if f.object.file_doc.present? %>
+      <div class="clearfix">
+        <label class="string control-label">
+          <%= f.check_box :remove_file_doc %> <%= "Supprimer le fichier".html_safe %>
+        </label>
+      </div>
+      <% end %>
+      <div class='file-field' style="display:<%= f.object.file_doc.present? ? 'none' : 'block' %>">
+        <%= f.file_field :file_doc, :class => 'file' %>
+      </div>
+      <br class='clearfix'\>
+      <%= btn_to(t(:"admin.documents.replace_file"), "",
+                 :class => "small change-upload-file-btn",
+                 :inline => true,
+                 :data => {:toggle => "toggle", :text => t(:'admin.documents.cancel_replace_file')}) if f.object.file_doc.present? %>
+    </div>
+</div>
+<div class='control-group'>
+    <label class="string control-label"><%= "Dossier de presse (pro & public)".html_safe %></label>
+    <div class='controls upload_file_preview'>
+      <% if f.object.file_press.present? %>
+          <p class='js-file-preview'><%= link_to "Preview", f.object.file_press.url, :target => "_blank"  %></p>
+      <% end %>
+      <% if f.object.file_press.present? %>
+      <div class="clearfix">
+        <label class="string control-label">
+          <%= f.check_box :remove_file_press %> <%= "Supprimer le fichier".html_safe %>
+        </label>
+      </div>
+      <% end %>
+      <div class='file-field' style="display:<%= f.object.file_press.present? ? 'none' : 'block' %>">
+        <%= f.file_field :file_press, :class => 'file' %>
+      </div>
+      <br class='clearfix'\>
+      <%= btn_to(t(:"admin.documents.replace_file"), "",
+                 :class => "small change-upload-file-btn",
+                 :inline => true,
+                 :data => {:toggle => "toggle", :text => t(:'admin.documents.cancel_replace_file')}) if f.object.file_press.present? %>
+    </div>
+</div>
+<% end %>

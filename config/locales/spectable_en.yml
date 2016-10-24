@@ -1,0 +1,64 @@
+en:
+  activerecord:
+    models:
+      spectacle_list: Performances
+      spectacle: Performance
+
+  spectacles:
+    collection:
+      continue: Voir le spectacle
+      empty: No performance has bee found
+    links:
+      previous: Previous
+      next: Next
+
+  simple_form:
+    labels:
+      spectacle:
+        subtitle: subtitle2
+      spectacle_option:
+        subtitle: subtitle2
+      spectacle_meta:
+        subtitle: subtitle2
+        team: team
+        prod: prod
+        intro: intro
+        co_prod: co_prod
+        extra: extra
+        sponsor: sponsor
+        
+  admin:
+    spectacle_lists:
+      actions:
+        edit: Accueil des spectacles
+        new: New
+        destroy: Destroy
+        index: Index
+      tooltips:
+        edit: Modifier la page du listing des spectacles
+      titles:
+        edit: Modification de la configuration du listing
+
+    spectacles:
+      untranslated_message:
+        one: "Attention: 1 spectacle n'est pas traduite."
+        many: "Attention: %{count} spectacles ne sont pas traduits."
+      select_blank: Sélectionner un spectacle
+      menu_tab: Spectacles
+      collection:
+        empty: "Aucun spectacle n'a été trouvé. %{link}"
+        create_item: "Créer un nouveau spectacle maintenant."
+      actions:
+        new: Ajouter un spectacle
+        destroy: Supprimer ce spectacle
+        edit: Modifier ce spectacle
+        index: Liste
+        view: Voir la page publique de ce spectacle
+        previous: Suivant
+        next: Précédent
+      tooltips:
+        index: Lister les spectacles
+      titles:
+        new: Ajout d'un spectacle
+        index: Liste des spectacles
+        edit: Modification d'un spectacle
