@@ -4,7 +4,7 @@ module SpectacleEventsHelper
     if event.custom_date.present?
       event.custom_date
     elsif event.end_date.present? and event.end_date.to_date == event.start_date.to_date + 1.day
-      "Les <span class='date'>#{l(event.start_date, :format => "%d")}</span> et <span class='date'>#{l(event.end_date, :format => '%d %B %Y')}</span>".html_safe
+      "#{t(:date_from_and)} <span class='date'>#{l(event.start_date, :format => "%d")}</span> #{t(:date_and)} <span class='date'>#{l(event.end_date, :format => '%d %B %Y')}</span>".html_safe
     elsif event.end_date.present? and event.end_date.to_date > event.start_date.to_date
       if event.start_date.year == event.end_date.year
         format_start_date = "%d %B"
